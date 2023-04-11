@@ -1,0 +1,57 @@
+<h3>Sistema de Conversion de Monedas</h3>
+
+<table border="0">
+  <tr>
+    <td>Monto:</td>
+    <td><input type="text" [(ngModel)]="Monto" /></td>
+  </tr>
+  <tr>
+    <td>Moneda Origen:</td>
+    <td><select [(ngModel)]="MonedaOri">
+  <option *ngFor="let item of data" value="{{item.moneda}}"> {{item.moneda}}</option>
+</select></td>
+  </tr>
+  <tr>
+    <td>Moneda Destino:</td>
+    <td><select [(ngModel)]="MonedaDes">
+  <option *ngFor="let item of data" value="{{item.moneda}}"> {{item.moneda}}</option>
+</select></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button type="button" (click)="CalcularTipoCambio()">Calcular</button></td>
+  </tr>
+</table>
+
+
+
+
+<br /><br />
+<div *ngIf="mostrarResult" style="border:solid grey 1px;padding:20px;width:600px;">
+  <h3>Resultado de Conversion</h3>
+  <table border="0">
+    <tr>
+      <td>Monto:</td>
+      <td>{{Monto}}</td>
+    </tr>
+    <tr>
+      <td>Monto Convertido:</td>
+      <td>{{MontoCambio}}</td>
+    </tr>
+    <tr>
+      <td>Moneda Origen:</td>
+      <td>{{MonedaOri}}</td>
+    </tr>
+    <tr>
+      <td>Moneda Destino:</td>
+      <td>{{MonedaDes}}</td>
+    </tr>
+    <tr>
+      <td>Tipo de Cambio:</td>
+      <td>{{TipoCambio}}</td>
+    </tr>
+  </table>
+
+
+
+</div>
